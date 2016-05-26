@@ -19,17 +19,6 @@ android {
         }
     }
 
-    android.libraryVariants.all { variant ->
-        if (variant.name == android.buildTypes.release.name) {
-            variant.outputs.each { output ->
-                if (output.outputFile != null && output.outputFile.name.endsWith('.aar')) {
-                    output.outputFile = new File("outputs-aar",
-                            "medicalsystem-net-" + defaultConfig.versionName + ".aar")
-                }
-            }
-        }
-    }
-
     useLibrary 'org.apache.http.legacy'
 }
 
